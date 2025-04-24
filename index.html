@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llamada Entrante</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="call-screen">
+        <!-- You might want to set the background image via CSS -->
+        <div class="caller-info">
+            <p class="caller-name">John Pork</p>
+            <p class="calling-status">Is calling...</p>
+        </div>
+        <div class="call-actions">
+            <button id="decline-button" class="call-button decline">
+                Decline
+            </button>
+            <button id="accept-button" class="call-button accept">
+                Accept
+            </button>
+        </div>
+    </div>
+
+    <div id="content" class="hidden">
+        <!-- Jumpscare and video elements will go here -->
+        <img id="jumpscare-image" src="https://huggingface.co/spaces/CBer35/asd/resolve/main/walidterrorifico.png?download=true" alt="Jumpscare" class="hidden">
+        <video id="loop-video" src="https://huggingface.co/spaces/CBer35/asd/resolve/main/chihuahua%20ricroll.mp4?download=true" loop class="hidden"></video>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
