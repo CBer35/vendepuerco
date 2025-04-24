@@ -19,18 +19,32 @@ body, html {
     flex-direction: column;
     justify-content: space-between; /* Pushes caller info up and actions down */
     align-items: center;
-    /* Temporarily changed background to test visibility */
-    background: url('https://huggingface.co/spaces/CBer35/asd/resolve/main/john_pork_sin_texto.png?download=true') no-repeat center center; */ /* Re-enable this with local path later */
+    /* Ensure background is set correctly (using local path recommended) */
+    background: url('https://huggingface.co/spaces/CBer35/asd/resolve/main/john_pork_sin_texto.png?download=true') no-repeat center center;
     background-size: cover;
     padding: 50px 20px;
     box-sizing: border-box;
 }
 
+/* Added to contain the background properly */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1; /* Place it behind the content */
+}
+
 .caller-info {
     text-align: center;
-    margin-top: 30%;
+    margin-top: 30%; /* Adjust as needed */
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    position: relative; /* Ensure text is above background */
+    z-index: 1;
 }
 
 .caller-name {
@@ -49,6 +63,8 @@ body, html {
     justify-content: space-around;
     align-items: center;
     margin-bottom: 10%;
+    position: relative; /* Ensure buttons are above background */
+    z-index: 1;
 }
 
 .call-button {
@@ -77,15 +93,14 @@ body, html {
     display: none;
 }
 
-/* Content Styles (Jumpscare/Video) */
+/* Content Styles (Jumpscare) */
 #content {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Keeps flex properties for alignment */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -93,19 +108,20 @@ body, html {
     z-index: 10;
 }
 
-#jumpscare-image, #loop-video {
+/* Style only for the jumpscare image now */
+#jumpscare-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* Position absolute removed as flex handles centering now */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
 }
 
 .hidden {
     display: none;
-    visibility: hidden; /* Added for extra insurance */
+    visibility: hidden;
 }
 
 :fullscreen #content,
